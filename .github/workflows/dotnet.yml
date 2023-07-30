@@ -13,8 +13,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
-
-    steps:
+    
+steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
@@ -23,6 +23,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     - name: Build
-      run: dotnet build
+      run: dotnet build 
+           cd path/to/project/directory
+           dotnet restore
+
     - name: Test
       run: dotnet test --verbosity normal
